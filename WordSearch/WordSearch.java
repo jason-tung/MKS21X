@@ -19,6 +19,9 @@ public class WordSearch{
     }    if (args.length==3){
       try{
         WordSearch jerry = new WordSearch(Integer.valueOf(args[0]),Integer.valueOf(args[1]),args[2]);
+        System.out.println(jerry);
+        System.out.println("I was able to add:");
+        System.out.println(jerry.wordsAdded);
       }
       catch (Exception e){
         System.out.println("hmmm.. it would seem you are not familiar with the syntax or are testing my code!");
@@ -27,9 +30,12 @@ public class WordSearch{
       }
     }
 
-    if (args.length==4){
+    else if (args.length==4){
       try{
         WordSearch jerry = new  WordSearch(Integer.valueOf(args[0]),Integer.valueOf(args[1]),args[2],Integer.valueOf(args[3]));
+        System.out.println(jerry);
+        System.out.println("I was able to add:");
+        System.out.println(jerry.wordsAdded);
       }
       catch (Exception e){
         System.out.println("hmmm.. it would seem you are not familiar with the syntax or are testing my code!");
@@ -38,15 +44,28 @@ public class WordSearch{
       }
     }
 
-    if (args.length==5){
+    else if (args.length==5){
       try{
+        if (!args[4].equals("key")){
+          System.out.println("you said: '" + args[4]+"'");
+          System.out.println("hmmm if you want to print the solution, the last param has to be key");
+          System.exit(1);
+        }
         WordSearch jerry = new  WordSearch(Integer.valueOf(args[0]),Integer.valueOf(args[1]),args[2],Integer.valueOf(args[3]),args[4]);
+        System.out.println(jerry);
+        System.out.println("I was able to add:");
+        System.out.println(jerry.wordsAdded);
       }
       catch (Exception e){
         System.out.println("hmmm.. it would seem you are not familiar with the syntax or are testing my code!");
         System.out.println("try the following:");
         System.out.println("java rows cols filename randomSeed key");
       }
+    }
+
+    else{
+      System.out.println("fatal error");
+      System.exit(1);
     }
     /*
     System.out.println(jerry);
@@ -67,10 +86,6 @@ public class WordSearch{
     WordSearch poo  = new WordSearch(9,9,"test.txt");
        WordSearch poo2  = new WordSearch(9,9,"afdaf.sal");
     */
-    jerry.addAllWords();
-    System.out.println(jerry);
-    System.out.println("words i was able to add:");
-    System.out.println(jerry.wordsAdded);
   }
 
   private char[][] data;
@@ -113,6 +128,8 @@ public class WordSearch{
       System.exit(1);
     }
     System.out.println("your seed is : "+seed);
+    addAllWords();
+    fill();
   }
 
 
@@ -139,6 +156,8 @@ public class WordSearch{
       System.exit(1);
     }
     System.out.println("your seed is : "+seed);
+    addAllWords();
+    fill();
   }
 
   public WordSearch(int rows,int cols,String filename,int seed,String key){
@@ -164,10 +183,19 @@ public class WordSearch{
       System.exit(1);
     }
     System.out.println("your seed is : "+seed);
+    addAllWords();
 
   }
 
-
+  private void fill(){
+    for (int i =0; i < data.length; i++){
+      for (int x = 0; x < data[0].length;x++){
+        if (data[i][x]=='_'){
+          data[i][x]=(char)(97+rng.nextInt(26));
+        }
+      }
+    }
+  }
 
   private void clear(){
     char[] dog = new char[data.length];
@@ -206,9 +234,16 @@ public class WordSearch{
 
 
   */
-
+  public void scramble(){
+    for (int i =0; i < wordsToAdd.size(); i++){
+      if (rng.nextInt(2)==0){
+        wordsToAdd.add(wordsToAdd.get(i));
+        wordsToAdd.remove(i);
+      }
+    }
+  }
   public void addAllWords(){
-
+    scramble();
     for (String words:wordsToAdd){
       int i = 0;
       int rinc = rng.nextInt(2)-1;
