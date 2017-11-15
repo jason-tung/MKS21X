@@ -7,7 +7,17 @@ import java.io.*;
 
 public class WordSearch{
   public static void main(String[]args){
-    WordSearch jerry  = new WordSearch(12,12,"test.txt",4186);
+
+    if (args.length<3){
+      System.out.println("hmmm.. it would seem you are not familiar with the syntax or are testing my code!");
+      System.out.println("try one of the following:");
+      System.out.println("java rows cols filename");
+      System.out.println("java rows cols filename randomSeed");
+      System.out.println("java rows cols filename randomSeed answers");
+      System.exit(1);
+    }
+
+    WordSearch jerry  = new WordSearch(12,12,"test.txt",4186,"fdsaf");
     /*
     System.out.println(jerry);
     jerry.clear();
@@ -99,6 +109,34 @@ public class WordSearch{
     }
     System.out.println("your seed is : "+seed);
   }
+
+  public WordSearch(int rows,int cols,String filename,int seed,String key){
+    if (rows == 0){
+      rows = 1;
+    }
+    if (cols ==0){
+      cols = 1;
+    }
+    data = new char[rows][cols];
+    clear();
+    this.seed = seed;
+    rng = new Random(seed);
+    try{
+      Scanner in = new Scanner(new File(filename));
+      while (in.hasNext()){
+        wordsToAdd.add(in.next().toLowerCase());
+        }
+      //   System.out.println(wordsToAdd);// this was for testing :))
+    }
+    catch (FileNotFoundException e){
+      System.out.println("hmm can't find the file -- please fix!");
+      System.exit(1);
+    }
+    System.out.println("your seed is : "+seed);
+
+  }
+
+
 
   private void clear(){
     char[] dog = new char[data.length];
