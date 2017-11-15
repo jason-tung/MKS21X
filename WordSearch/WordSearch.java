@@ -128,6 +128,7 @@ public class WordSearch{
         wordsAdded.add(words);
       }
     }
+
   }
 
   public boolean addWord(String word, int row, int col, int Rinc, int Cinc){
