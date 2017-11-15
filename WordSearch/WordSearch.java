@@ -1,12 +1,13 @@
 //dogs and cats 123 123 123
 
 //testing with github
+//sorry if my code is really messy -- i didnt have time to reorganize it!
 import java.util.*;
 import java.io.*;
 
 public class WordSearch{
   public static void main(String[]args){
-    WordSearch jerry  = new WordSearch(9,9,"test.txt");
+    WordSearch jerry  = new WordSearch(12,12,"test.txt",4186);
     /*
     System.out.println(jerry);
     jerry.clear();
@@ -26,11 +27,11 @@ public class WordSearch{
     WordSearch poo  = new WordSearch(9,9,"test.txt");
        WordSearch poo2  = new WordSearch(9,9,"afdaf.sal");
     */
-    System.out.println(jerry);
     jerry.addAllWords();
     System.out.println(jerry);
-    System.out.println();
+    System.out.println(jerry.wordsAdded);
   }
+
   private char[][] data;
   private char[][] solution;
   private int seed;
@@ -48,6 +49,12 @@ public class WordSearch{
   you should never need to use this jesus
   */
   public WordSearch(int rows,int cols,String filename){
+    if (rows == 0){
+      rows = 1;
+    }
+    if (cols ==0){
+      cols = 1;
+    }
     data = new char[rows][cols];
     clear();
     Random superseed = new Random();
@@ -67,7 +74,32 @@ public class WordSearch{
     System.out.println("your seed is : "+seed);
   }
 
-  /**Set all values in the WordSearch to underscores'_'*/
+
+  public WordSearch(int rows,int cols,String filename,int seed){
+    if (rows == 0){
+      rows = 1;
+    }
+    if (cols ==0){
+      cols = 1;
+    }
+    data = new char[rows][cols];
+    clear();
+    this.seed = seed;
+    rng = new Random(seed);
+    try{
+      Scanner in = new Scanner(new File(filename));
+      while (in.hasNext()){
+        wordsToAdd.add(in.next().toLowerCase());
+        }
+      //   System.out.println(wordsToAdd);// this was for testing :))
+    }
+    catch (FileNotFoundException e){
+      System.out.println("hmm can't find the file -- please fix!");
+      System.exit(1);
+    }
+    System.out.println("your seed is : "+seed);
+  }
+
   private void clear(){
     char[] dog = new char[data.length];
     for (int i =0; i<data.length;i++){
@@ -107,6 +139,7 @@ public class WordSearch{
   */
 
   public void addAllWords(){
+
     for (String words:wordsToAdd){
       int i = 0;
       int rinc = rng.nextInt(2)-1;
