@@ -27,8 +27,8 @@ public class WordSearch{
        WordSearch poo2  = new WordSearch(9,9,"afdaf.sal");
     */
     System.out.println(jerry);
-    System.out.println();
-    System.out.println();
+    jerry.addAllWords();
+    System.out.println(jerry);
     System.out.println();
   }
   private char[][] data;
@@ -36,6 +36,7 @@ public class WordSearch{
   private int seed;
   private ArrayList<String> wordsToAdd = new ArrayList<>();
   private ArrayList<String> wordsAdded = new ArrayList<>();
+  private Random rng;
   /*
   public WordSearch(int rows,int cols){
     data = new char[rows][cols];
@@ -51,7 +52,7 @@ public class WordSearch{
     clear();
     Random superseed = new Random();
     seed = superseed.nextInt(10000);
-    Random rng = new Random(seed);
+    rng = new Random(seed);
     try{
       Scanner in = new Scanner(new File(filename));
       while (in.hasNext()){
@@ -89,6 +90,7 @@ public class WordSearch{
     return srch;
   }
 
+  /*
   public boolean addWordHorizontal(String word,int row, int col){
     int Rinc = 1;
     int Cinc = 0;
@@ -101,6 +103,32 @@ public class WordSearch{
     return addWord(word, row, col, Rinc, Cinc);
   }
 
+
+  */
+
+  public void addAllWords(){
+    for (String words:wordsToAdd){
+      int i = 0;
+      int rinc = rng.nextInt(2)-1;
+      int cinc = rng.nextInt(2)-1;
+      while (rinc == 0 && cinc == 0){
+        rinc = rng.nextInt(2)-1;
+        cinc = rng.nextInt(2)-1;
+      }
+      while (!addWord(words, rng.nextInt(data.length+1),rng.nextInt(data[0].length+1),rinc,cinc)&&i < 1000){
+        i++;
+        rinc = rng.nextInt(2)-1;
+        cinc = rng.nextInt(2)-1;
+        while (rinc == 0 && cinc == 0){
+          rinc = rng.nextInt(2)-1;
+          cinc = rng.nextInt(2)-1;
+        }
+      }
+      if (i < 999){
+        wordsAdded.add(words);
+      }
+    }
+  }
 
   public boolean addWord(String word, int row, int col, int Rinc, int Cinc){
 
