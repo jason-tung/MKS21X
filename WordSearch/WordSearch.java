@@ -6,7 +6,7 @@ import java.io.*;
 
 public class WordSearch{
   public static void main(String[]args){
-    WordSearch jerry  = new WordSearch(9,9);
+    WordSearch jerry  = new WordSearch(9,9,"test.txt");
     /*
     System.out.println(jerry);
     jerry.clear();
@@ -26,6 +26,7 @@ public class WordSearch{
     WordSearch poo  = new WordSearch(9,9,"test.txt");
        WordSearch poo2  = new WordSearch(9,9,"afdaf.sal");
     */
+    System.out.println(jerry);
     System.out.println();
     System.out.println();
     System.out.println();
@@ -35,7 +36,7 @@ public class WordSearch{
   private int seed;
   private ArrayList<String> wordsToAdd = new ArrayList<>();
   private ArrayList<String> wordsAdded = new ArrayList<>();
-
+  /*
   public WordSearch(int rows,int cols){
     data = new char[rows][cols];
     clear();
@@ -43,6 +44,8 @@ public class WordSearch{
     seed = superseed.nextInt();
     Random rng = new Random(seed);
   }
+  you should never need to use this jesus
+  */
   public WordSearch(int rows,int cols,String filename){
     data = new char[rows][cols];
     clear();
@@ -54,7 +57,7 @@ public class WordSearch{
       while (in.hasNext()){
         wordsToAdd.add(in.next().toLowerCase());
         }
-      //  System.out.println(wordsToAdd);// this was for testing :))
+      //   System.out.println(wordsToAdd);// this was for testing :))
     }
     catch (FileNotFoundException e){
       System.out.println("hmm can't find the file -- please fix!");
