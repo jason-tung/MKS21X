@@ -8,16 +8,46 @@ import java.io.*;
 public class WordSearch{
   public static void main(String[]args){
 
-    if (args.length<3){
+    if (args.length<3 || args.length >5){
       System.out.println("hmmm.. it would seem you are not familiar with the syntax or are testing my code!");
       System.out.println("try one of the following:");
       System.out.println("java rows cols filename");
       System.out.println("java rows cols filename randomSeed");
       System.out.println("java rows cols filename randomSeed answers");
       System.exit(1);
+
+    }    if (args.length==3){
+      try{
+        WordSearch jerry = new WordSearch(Integer.valueOf(args[0]),Integer.valueOf(args[1]),args[2]);
+      }
+      catch (Exception e){
+        System.out.println("hmmm.. it would seem you are not familiar with the syntax or are testing my code!");
+        System.out.println("try the following:");
+        System.out.println("java rows cols filename");
+      }
     }
 
-    WordSearch jerry  = new WordSearch(12,12,"test.txt",4186,"fdsaf");
+    if (args.length==4){
+      try{
+        WordSearch jerry = new  WordSearch(Integer.valueOf(args[0]),Integer.valueOf(args[1]),args[2],Integer.valueOf(args[3]));
+      }
+      catch (Exception e){
+        System.out.println("hmmm.. it would seem you are not familiar with the syntax or are testing my code!");
+        System.out.println("try the following:");
+        System.out.println("java rows cols filename randomSeed");
+      }
+    }
+
+    if (args.length==5){
+      try{
+        WordSearch jerry = new  WordSearch(Integer.valueOf(args[0]),Integer.valueOf(args[1]),args[2],Integer.valueOf(args[3]),args[4]);
+      }
+      catch (Exception e){
+        System.out.println("hmmm.. it would seem you are not familiar with the syntax or are testing my code!");
+        System.out.println("try the following:");
+        System.out.println("java rows cols filename randomSeed key");
+      }
+    }
     /*
     System.out.println(jerry);
     jerry.clear();
@@ -39,6 +69,7 @@ public class WordSearch{
     */
     jerry.addAllWords();
     System.out.println(jerry);
+    System.out.println("words i was able to add:");
     System.out.println(jerry.wordsAdded);
   }
 
