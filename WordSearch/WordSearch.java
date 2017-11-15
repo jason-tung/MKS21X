@@ -1,10 +1,10 @@
+//dogs and cats 123 123 123
 
 //testing with github
 import java.util.*;
 import java.io.*;
 
 public class WordSearch{
-  Random superseed = new Random();
   public static void main(String[]args){
     WordSearch jerry  = new WordSearch(9,9);
     System.out.println(jerry);
@@ -20,13 +20,17 @@ public class WordSearch{
     System.out.println(jerry.addWord("cat",3+3,7,-1,-1));
     System.out.println(jerry);
     //    System.out.println(jerry.data[0][8]);
+    WordSearch poo  = new WordSearch(9,9,"test.txt");
+    //   WordSearch poo2  = new WordSearch(9,9,"afdaf.sal");
     System.out.println();
     System.out.println();
     System.out.println();
   }
   private char[][] data;
   private char[][] solution;
-  public int seed;
+  private int seed;
+  private ArrayList<String> wordsToAdd = new ArrayList<>();
+  private ArrayList<String> wordsAdded = new ArrayList<>();
   /**Initialize the grid to the size specified
    *fill all of the positions with '_'
    *@param row is the starting height of the WordSearch
@@ -35,12 +39,28 @@ public class WordSearch{
   public WordSearch(int rows,int cols){
     data = new char[rows][cols];
     clear();
+    Random superseed = new Random();
     seed = superseed.nextInt();
     Random rng = new Random(seed);
   }
-  public WordSearch(int rows,int cols,String file,int s){
+  public WordSearch(int rows,int cols,String filename){
     data = new char[rows][cols];
     clear();
+    Random superseed = new Random();
+    seed = superseed.nextInt(10000);
+    Random rng = new Random(seed);
+    try{
+      Scanner in = new Scanner(new File(filename));
+      while (in.hasNext()){
+        wordsToAdd.add(in.next().toLowerCase());
+        }
+      //    System.out.println(wordsToAdd); this was for testing :))
+    }
+    catch (FileNotFoundException e){
+      System.out.println("hmm can't find the file -- please fix!");
+      System.exit(1);
+    }
+    System.out.println("your seed is : "+seed);
   }
 
   /**Set all values in the WordSearch to underscores'_'*/
