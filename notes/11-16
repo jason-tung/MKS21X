@@ -8,3 +8,5 @@ makes a public (.pub) and private key in the home/user/.ssh/ directory
 the pub key is used to encrypt -- which can be unlocked with a private key
 place the pub key onto a machine or server
 use the private key to match and unlock encryption and bypass a un/pw login
+ssh-copy-id -i ~/.ssh/KEY_NAME user@host
+copies the pub key onto a different machine's .ssh directory
