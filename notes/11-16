@@ -1,4 +1,5 @@
 #11/16 -- imported from replit and memory
+
 ##SSH Keys
 ssh-keygen -t rsa -b 4096 -C "comment-here"
 -t is the encryption type param
