@@ -1,6 +1,6 @@
-#11/16 -- imported from replit and memory
+11/16 -- imported from replit and memory
 
-##SSH Keys
+SSH Keys
 ssh-keygen -t rsa -b 4096 -C "comment-here"
 -t is the encryption type param
 -b is the bytes of encryption
