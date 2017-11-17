@@ -1,0 +1,10 @@
+#11/16 -- imported from replit and memory
+##SSH Keys
+ssh-keygen -t rsa -b 4096 -C "comment-here"
+-t is the encryption type param
+-b is the bytes of encryption
+-C is a comment
+makes a public (.pub) and private key in the home/user/.ssh/ directory
+the pub key is used to encrypt -- which can be unlocked with a private key
+place the pub key onto a machine or server
+use the private key to match and unlock encryption and bypass a un/pw login
