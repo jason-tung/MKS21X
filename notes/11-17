@@ -7,4 +7,3 @@ git status -- prints the status of commmits
 git add (-A) filename filename filename -- adds (all) files to the commit stage
 git commit (-am) (-m) -- -am adds and commits all modified fles -m adds a commit message; commit is important!!
 git push -- pushing your commits
-
