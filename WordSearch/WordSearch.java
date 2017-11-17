@@ -1,9 +1,4 @@
-//succesfully sshed in
-
-//woohoo
-//dogs and cats 123 123 123
-//testing ssh
-
+//completed
 //testing with github
 //sorry if my code is really messy -- i didnt have time to reorganize it!
 import java.util.*;
