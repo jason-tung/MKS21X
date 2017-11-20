@@ -1,4 +1,4 @@
-# javadog
+# MKS21X -- formerly "javadog"
 javadog is my apcs repo written in java!
 
 feel free to look through my (really bad) labs
