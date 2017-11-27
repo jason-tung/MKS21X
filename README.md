@@ -3,7 +3,7 @@ javadog is my apcs repo written in java!
 
 feel free to look through my (really bad) labs
 
-## notes (starting from 11/16/2017)
+## notes (starting from 11/16/2017) -- Discontinued due to laziness
 my notes written on a blank txt file -- feel free to look through them
 
 ## 00n/a
