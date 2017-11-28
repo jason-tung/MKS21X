@@ -23,13 +23,13 @@ public class Book{
 	return isbin;
     }
 
-    public void setAuthor(a){
+    public void setAuthor(String a){
         author=a;
     }
-    public void setTitle(a){
+    public void setTitle(String a){
         title=a;
     }
-    public void setISBIN(a){
+    public void setISBIN(String a){
         isbin=a;
     }
     
