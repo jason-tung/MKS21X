@@ -33,5 +33,7 @@ public class Book{
         isbin=a;
     }
     
-    
+    public String toString(){
+	return title + " by: " + author + "/n ISBIN: " + isbin;
+    }
 }
