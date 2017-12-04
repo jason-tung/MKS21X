@@ -2,7 +2,7 @@ public class ReferenceBook extends LibraryBook{
     String collection;
 
     public ReferenceBook(String author, String name, String isbin, String callNumber, String collection){
-	super(aut, name, isbin, callNumber);
+	super(author, name, isbin, callNumber);
 	collection = collection;
     }
 
@@ -15,11 +15,13 @@ public class ReferenceBook extends LibraryBook{
     }
 
     public void checkout(String patron, String due){
-        throw new UnsupportedOperationException("cannot check out a reference book");
+        System.out.println("Reference book could not have been checked out");
+
     }
 
-    public void returned(String patron, String due){
-	throw new UnsupportedOperationException("reference book could not have been checked out -- return impossible");
+    public void returned(){
+	System.out.println("Reference book could not have been checked out -- return impossible");
+
     }
 
     public String circulationStatus(){
@@ -27,7 +29,8 @@ public class ReferenceBook extends LibraryBook{
     }
 
     public String toString(){
-        return super.toString() + "/b collection: " + collection;
+        return super.toString() + "\ncollection: " + collection;
     }
+}
 
 	

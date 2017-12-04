@@ -43,6 +43,6 @@ public class CirculatingBook extends LibraryBook{
 	if (currentHolder == null){
 	    return super.toString();
 	}
-	return super.toString() + "/n Current Holder: " + currentHolder + "/nDue: " + dueDate;
+	return super.toString() + "\nCurrent Holder: " + currentHolder + "\nDue: " + dueDate;
     }
 }
