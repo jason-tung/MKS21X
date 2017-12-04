@@ -34,6 +34,6 @@ public class Book{
     }
     
     public String toString(){
-	return title + " by: " + author + "/n ISBIN: " + isbin;
+	return "Title: " + title "/nAuthor: " +author+"/nISBIN: " + isbin;
     }
 }
