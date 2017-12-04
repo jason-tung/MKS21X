@@ -22,3 +22,6 @@ wordsearch is a java class experimenting with running java files using the cmd l
 adds as many words as possible from an external file onto a char arry in random orientations (much like a real wordsearch).
 
 imported random to make random-seeds
+
+ill edit this soon
+soon as in after i budget time to sleep
