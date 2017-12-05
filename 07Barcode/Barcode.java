@@ -23,7 +23,7 @@ public class Barcode{// implements Comparable<Barcode>{
   }
 
   public String toString(){
-    return null;
+    return code + " ("+zip+")";
   }
 
   public String getCode(){
@@ -48,5 +48,6 @@ public class Barcode{// implements Comparable<Barcode>{
     Barcode jerry = new Barcode("00294");
     System.out.println(jerry.getCode().compareTo("|||:::||:::::|:||:|:::|::|:|:|:|"));
     System.out.println(jerry.zip);
+    System.out.println(jerry);
   }
 }
