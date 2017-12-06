@@ -116,21 +116,22 @@ public class Barcode implements Comparable<Barcode>{
 
 
 
-
+  
   /* ----------------------------------------------*/
+  /***
   public static void main(String[] args){
     Barcode jerry = new Barcode("36751");
     Barcode lerry = new Barcode("36749");
     Barcode serry = new Barcode("36751");
     Barcode merry = new Barcode("36753");
-    /*
+   
     System.out.println(jerry.getCode());
     System.out.println(jerry.zip);
     System.out.println(jerry);
     System.out.println(jerry.compareTo(lerry));
     System.out.println(jerry.compareTo(serry));
     System.out.println(jerry.compareTo(merry));
-    */
+   
     System.out.println(legit("|::||::|:::|:|:|::::||::|:||"));
     System.out.println("----");
     System.out.println(legit("|::||::||::|:|||:|:|:|::::||::|:|"));
@@ -142,4 +143,5 @@ public class Barcode implements Comparable<Barcode>{
 
     
   }
+  ***/
 }
