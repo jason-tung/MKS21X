@@ -12,6 +12,7 @@ public class Sorts{
     //--------------------CHANGE SORT HERE--------------------//
     System.out.println(d(pp));
     Arrays.sort(poopypants);
+    System.out.println(d(pp));
     System.out.println(Arrays.equals(pp,poopypants));
   }
 
@@ -32,21 +33,27 @@ public class Sorts{
   }
 
   public static void insertionSort(int[] data){
-    for (int i = 0; i < data.length; i++){
-      int minIndex = i;
-      for (int j = i-1; j >= 0;j--){
-        if (data[j] < data[minIndex]){
-          minIndex = j;
-        }
-      }
-      if (minIndex!=i){
-        int hol = data[i];
-        data[i] = data[minIndex];
-        data[minIndex] = hol;
+    for (int i = 1; i < data.length; i++){
+      int tracker = i;
+      while (tracker != 0 && data[tracker]<data[tracker-1]){
+        int holder = data[tracker];
+        data[tracker] = data[tracker-1];
+        data[tracker-1] = holder;
+        tracker--;
       }
     }
   }
-
+  /*
+  public static void swapSpot(int[]data,int index){
+    int tracker = index;
+    while (tracker != 0 && data[tracker]<data[tracker-1]){
+      int holder = data[tracker];
+      data[tracker] = data[tracker-1];
+      data[tracker-1] = holder;
+      tracker--;
+    }
+  }
+  */
 
 
 
