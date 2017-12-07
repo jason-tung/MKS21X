@@ -1,6 +1,6 @@
 import java.util.*;
 public class Sorts{
-  /*
+  
   public static void main(String[]args){
     int[] poopypants = new int[10];
     for (int i =0; i < 10; i++){
@@ -10,12 +10,10 @@ public class Sorts{
     //--------------------CHANGE SORT HERE--------------------//
     insertionSort(pp); //selectionSort(pp);
     //--------------------CHANGE SORT HERE--------------------//
-    System.out.println(d(pp));
     Arrays.sort(poopypants);
-    System.out.println(d(pp));
     System.out.println(Arrays.equals(pp,poopypants));
   }
-  */
+  
   public static void selectionSort(int[] data){
     for (int i = 0; i < data.length; i++){
       int minIndex = i;
