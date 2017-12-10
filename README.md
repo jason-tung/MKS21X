@@ -25,3 +25,5 @@ imported random to make random-seeds
 
 ill edit this soon
 soon as in after i budget time to sleep
+
+edit: i think ill do this during english class or something
