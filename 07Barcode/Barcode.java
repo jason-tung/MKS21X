@@ -139,9 +139,24 @@ public class Barcode implements Comparable<Barcode>{
     System.out.println(legit(lerry.getCode()));
     System.out.println(jerry.getZip());
     System.out.println(toZip(jerry.getCode()));
-    
+    Barcode y = new Barcode("11133");
+    Barcode x = new Barcode("11111");
+    System.out.println(y);
+    System.out.println(y.getZip());
+    System.out.println(y.getCode());
+    System.out.println(x.equals(y));
+    System.out.println(x.compareTo(y));
 
-    
+    Barcode e = new Barcode("12sa1"); //Should throw an error, sa not valid nums
+    Barcode f = new Barcode("12312312"); //Should throw an error, too many nums
+    Barcode.toCode("131"); //Should throw an error, too little nums
+    Barcode.toCode("123dasda"); //Should throw an error, dasda are not valid #s
+    Barcode.toZip("|||:::||:::::|:||:|:::|::|:|:|::|"); //Should throw an error, Way too long
+    Barcode.toZip(":||:::||:::::|:||:|:::|::|:|:|::|"); //Should throw an error, should not end with :
+    Barcode.toZip(":||:::||:::::|:||:|:::|::|:||:::|"); //Should throw an error, checkSum incorrect
+    Barcode.toZip("|::::::|:::::|:||:|:::|::|:|:|::|"); //Should throw an error, ::::: found
   }
   ***/
+
+  
 }
