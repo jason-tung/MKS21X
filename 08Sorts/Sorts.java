@@ -21,16 +21,25 @@ public class Sorts{
       thrAryF[i] = 4+3*i;
       thrAryB[2-i] = 4 + 3*i;
     }
+
+    int[] fvAryF = new int[5];
+    int[] fvAryB = new int[5];
+    for (int i =0; i < 5; i++){
+      fvAryF[i] = 4+3*i;
+      fvAryB[4-i] = 4 + 3*i;
+    }
     int[] pp = poopypants.clone();
     //--------------------CHANGE SORT HERE--------------------//
-    //wow emacs commands make this so ez!!
-    selectionSort(pp);
-    selectionSort(emptyAry);
-    selectionSort(oneAry);
-    selectionSort(twoAryF);
-    selectionSort(twoAryB);
-    selectionSort(thrAryF);
-    selectionSort(thrAryB);
+    //wow emacs cmds make this so ez!! emacs masterrace!
+    insertionSort(pp);
+    insertionSort(emptyAry);
+    insertionSort(oneAry);
+    insertionSort(twoAryF);
+    insertionSort(twoAryB);
+    insertionSort(thrAryF);
+    insertionSort(thrAryB);
+    insertionSort(fvAryF);
+    insertionSort(fvAryB);
     //--------------------CHANGE SORT HERE--------------------//
     boolean tester = true;
     System.out.println("----empty ary----");
@@ -51,6 +60,12 @@ public class Sorts{
     System.out.println("----three element ary backwards----");
     System.out.println(d(thrAryB));
     tester &= d(thrAryF).equals("[4,7,10]");
+    System.out.println("----five element ary forwards----");
+    System.out.println(d(fvAryF));
+    tester &= d(fvAryF).equals("[4,7,10,13,16]");
+    System.out.println("----five element ary backwards----");
+    System.out.println(d(fvAryB));
+    tester &= d(fvAryF).equals("[4,7,10,13,16]");
     System.out.println("----generic case verdict----");
     Arrays.sort(poopypants);
     System.out.println(d(pp));
