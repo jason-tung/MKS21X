@@ -11,7 +11,7 @@ my notes are a historical archive of a time when I wrote about three lines of "n
 ## **Lab Overview**
 
 ### 00n/a
-[x] there was no lab 0 -- this just relieves my 0-index anxiety
+* there was no lab 0 -- this just relieves my 0-index anxiety
 
 ### 01SuperArray
 [x] basic reconstruction of ArrayList<String>
