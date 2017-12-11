@@ -6,12 +6,61 @@ public class Sorts{
     for (int i =0; i < 10; i++){
       poopypants[i]=(int)(Math.random()*100);
     }
+    int[] emptyAry = new int[0];
+    int[] oneAry = new int[1];
+    oneAry[0] = 0;
+    int[] twoAryF = new int[2];
+    int[] twoAryB = new int[2];
+    for (int i =0; i < 2; i++){
+      twoAryF[i] = 4+3*i;
+      twoAryB[1-i] = 4 + 3*i;
+    }
+    int[] thrAryF = new int[3];
+    int[] thrAryB = new int[3];
+    for (int i =0; i < 3; i++){
+      thrAryF[i] = 4+3*i;
+      thrAryB[2-i] = 4 + 3*i;
+    }
     int[] pp = poopypants.clone();
     //--------------------CHANGE SORT HERE--------------------//
-    insertionSort(pp); //selectionSort(pp);
+    //wow emacs commands make this so ez!!
+    selectionSort(pp);
+    selectionSort(emptyAry);
+    selectionSort(oneAry);
+    selectionSort(twoAryF);
+    selectionSort(twoAryB);
+    selectionSort(thrAryF);
+    selectionSort(thrAryB);
     //--------------------CHANGE SORT HERE--------------------//
+    boolean tester = true;
+    System.out.println("----empty ary----");
+    System.out.println(d(emptyAry));
+    tester &= d(emptyAry).equals("[]");
+    System.out.println("----one element ary----");
+    System.out.println(d(oneAry));
+    tester &= d(oneAry).equals("[0]");
+    System.out.println("----two element ary forwards----");
+    System.out.println(d(twoAryF));
+    tester &= d(twoAryF).equals("[4,7]");
+    System.out.println("----two element ary backwards----");
+    System.out.println(d(twoAryB));
+    tester &= d(twoAryB).equals("[4,7]");
+    System.out.println("----three element ary forwards----");
+    System.out.println(d(thrAryF));
+    tester &= d(thrAryF).equals("[4,7,10]");
+    System.out.println("----three element ary backwards----");
+    System.out.println(d(thrAryB));
+    tester &= d(thrAryF).equals("[4,7,10]");
+    System.out.println("----generic case verdict----");
     Arrays.sort(poopypants);
-    System.out.println(Arrays.equals(pp,poopypants));
+    System.out.println(d(pp));
+    tester &= (Arrays.equals(pp,poopypants));
+    if (tester){
+      System.out.println("\nPASSED ALL TESTS\n");
+    }
+    else {
+      System.out.println("\nFAILED A TEST\n");
+    }
   }
   
   public static void selectionSort(int[] data){
@@ -84,7 +133,7 @@ public class Sorts{
   }
 
   public static String name(){
-    return "09.Tung.Jason";
+    return "09,Tung,Jason";
   }
 
   /*
