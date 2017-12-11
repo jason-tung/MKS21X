@@ -31,15 +31,16 @@ public class Sorts{
     int[] pp = poopypants.clone();
     //--------------------CHANGE SORT HERE--------------------//
     //wow emacs cmds make this so ez!! emacs masterrace!
-    insertionSort(pp);
-    insertionSort(emptyAry);
-    insertionSort(oneAry);
-    insertionSort(twoAryF);
-    insertionSort(twoAryB);
-    insertionSort(thrAryF);
-    insertionSort(thrAryB);
-    insertionSort(fvAryF);
-    insertionSort(fvAryB);
+    System.out.println("----bubbleSort----");
+    bubbleSort(emptyAry);
+    bubbleSort(oneAry);
+    bubbleSort(twoAryF);
+    bubbleSort(twoAryB);
+    bubbleSort(thrAryF);
+    bubbleSort(thrAryB);
+    bubbleSort(fvAryF);
+    bubbleSort(fvAryB);
+    bubbleSort(pp);
     //--------------------CHANGE SORT HERE--------------------//
     boolean tester = true;
     System.out.println("----empty ary----");
@@ -79,7 +80,7 @@ public class Sorts{
   }
   
   public static void selectionSort(int[] data){
-    for (int i = 0; i < data.length; i++){
+    for (int i = 0; i < data.length-1; i++){
       int minIndex = i;
       for (int j = i+1; j < data.length;j++){
         if (data[j] < data[minIndex]){
@@ -105,6 +106,20 @@ public class Sorts{
       }
     }
   }
+
+
+  public static void bubbleSort(int[] data){
+    for (int i = 0; i < data.length-1; i++){
+      for (int j = 0; j < data.length-1-i; j++){
+        if (data[j+1]<data[j]){
+          int holder = data[j+1];
+          data[j+1] = data[j];
+          data[j] = holder;
+        }
+      }
+    }
+  }
+  
   /*
   public static void swapSpot(int[]data,int index){
     int tracker = index;
