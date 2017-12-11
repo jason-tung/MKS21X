@@ -48,6 +48,7 @@ public class Sorts{
     selectionSort(fvAryB);
     selectionSort(sameAry5);
     selectionSort(pp);
+    
     //--------------------CHANGE SORT HERE--------------------//
     boolean tester = true;
     System.out.println("----empty ary----");
