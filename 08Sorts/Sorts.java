@@ -11,9 +11,11 @@ public class Sorts{
     oneAry[0] = 0;
     int[] twoAryF = new int[2];
     int[] twoAryB = new int[2];
+    int[] sameAry2 = new int[2];
     for (int i =0; i < 2; i++){
       twoAryF[i] = 4+3*i;
       twoAryB[1-i] = 4 + 3*i;
+      sameAry2[i] = 2;
     }
     int[] thrAryF = new int[3];
     int[] thrAryB = new int[3];
@@ -24,23 +26,28 @@ public class Sorts{
 
     int[] fvAryF = new int[5];
     int[] fvAryB = new int[5];
+    int[] sameAry5 = new int[5];
     for (int i =0; i < 5; i++){
       fvAryF[i] = 4+3*i;
       fvAryB[4-i] = 4 + 3*i;
+      sameAry5[i] = 5;
     }
+    
     int[] pp = poopypants.clone();
     //--------------------CHANGE SORT HERE--------------------//
     //wow emacs cmds make this so ez!! emacs masterrace!
-    System.out.println("----bubbleSort----");
-    bubbleSort(emptyAry);
-    bubbleSort(oneAry);
-    bubbleSort(twoAryF);
-    bubbleSort(twoAryB);
-    bubbleSort(thrAryF);
-    bubbleSort(thrAryB);
-    bubbleSort(fvAryF);
-    bubbleSort(fvAryB);
-    bubbleSort(pp);
+    System.out.println("----selectionSort----");
+    selectionSort(emptyAry);
+    selectionSort(oneAry);
+    selectionSort(twoAryF);
+    selectionSort(twoAryB);
+    selectionSort(sameAry2);
+    selectionSort(thrAryF);
+    selectionSort(thrAryB);
+    selectionSort(fvAryF);
+    selectionSort(fvAryB);
+    selectionSort(sameAry5);
+    selectionSort(pp);
     //--------------------CHANGE SORT HERE--------------------//
     boolean tester = true;
     System.out.println("----empty ary----");
@@ -55,7 +62,10 @@ public class Sorts{
     System.out.println("----two element ary backwards----");
     System.out.println(d(twoAryB));
     tester &= d(twoAryB).equals("[4,7]");
-    System.out.println("----three element ary forwards----");
+    System.out.println("----two identical elements ary----");
+    System.out.println(d(sameAry2));
+    tester &= d(sameAry2).equals("[2,2]");
+    System.out.println("----threeelement ary forwards----");
     System.out.println(d(thrAryF));
     tester &= d(thrAryF).equals("[4,7,10]");
     System.out.println("----three element ary backwards----");
@@ -67,6 +77,9 @@ public class Sorts{
     System.out.println("----five element ary backwards----");
     System.out.println(d(fvAryB));
     tester &= d(fvAryF).equals("[4,7,10,13,16]");
+    System.out.println("----five identical elements ary----");
+    System.out.println(d(sameAry5));
+    tester &= d(sameAry5).equals("[5,5,5,5,5]");
     System.out.println("----generic case verdict----");
     Arrays.sort(poopypants);
     System.out.println(d(pp));
