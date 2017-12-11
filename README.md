@@ -3,7 +3,7 @@ javadog is my apcs repo written in java!
 
 feel free to look through my (really bad) labs
 
-### notes (starting from 11/16/2017)
+### regarding my "notes"
 ~~my notes written on a blank txt file -- feel free to look through them~~
 my notes are a historical archive of a time when I wrote about three lines of "notes" for a full lecture -- i use a notebook now
 
@@ -11,28 +11,31 @@ my notes are a historical archive of a time when I wrote about three lines of "n
 ## **Lab Overview**
 
 ### 00n/a
-* there was no lab 0 -- this just relieves my 0-index anxiety
+there was no lab 0 -- this just relieves my 0-index anxiety
 
 ### 01SuperArray
-[x] basic reconstruction of ArrayList<String>
-[x] binary search algo
+*basic reconstruction of ArrayList<String>
+*binary search algo
 
 ### 02OrderedSuperArray
-[x]extends SuperArray.java from lab01
-[x] throw exception
-blueprint for an alphabetized SuperArray
-used binary search insertionSort to add strings into the right place
+*blueprint for an alphabetized SuperArray
+*extends SuperArray.java from lab01
+*throw exception
+*used binary search insertionSort to add strings into the right place
 
 ### 03WordSearch
-file scanning and reading
-try except blocks -- i absolutely abused these to avoid hard coding cases
-Math.random()
-random.nextInt()
+*made a wordsearch in the terminal using text from another file
+*taking arguments from terminal
+*file scanning and reading
+*try except blocks -- i absolutely abused these to avoid hard coding cases
+*Math.random()
+*random.nextInt()
+*consistency in random-seeds
 
-adds as many words as possible from an external file onto a char arry in random orientations (much like a real wordsearch).
-imported random to make random-seeds
-consistency in random-seeds
+### 04ReverseCharSequence
+*String methods, but treated the String as if it were reversed
+*implementation of interfaces(CharSequence)
 
-
-## 04RevereCharSequence
-learning
+### 05Library
+*system by which books in a library can be classified and checked out by people, as well as display information on the book
+*
