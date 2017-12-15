@@ -59,3 +59,8 @@ there was no lab 0 -- this just relieves my 0-index anxiety
   * sorts the next element of the set into the previously sorted set (starting from ary[0] as sorted)
 * bubbleSort
   * takes each element and moves it until it reaches the last sorted element or a number greater than itself
+### 09TemperatureWindow
+* gui window converting between celcius and farenheit
+* extends JFrame
+* implements EventsListener
+* uses swing and awt
