@@ -3,7 +3,6 @@ javadog is my apcs repo written in java!
 
 feel free to look through my (really bad) labs
 
-
 ### regarding my "notes"
 ~~my notes written on a blank txt file -- feel free to look through them~~
 
