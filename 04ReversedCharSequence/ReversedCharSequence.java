@@ -1,18 +1,19 @@
-public class ReverseCharSequence implements CharSequence{
+public class ReversedCharSequence implements CharSequence{
   
-  /*
+  
   public static void main(String[] args){
-    ReverseCharSequence jerry = new ReverseCharSequence("jerry");
+    ReversedCharSequence jerry = new ReversedCharSequence("");
     System.out.println(jerry);
-    System.out.println(jerry.charAt(0));
+    // System.out.println(jerry.charAt(0));
     System.out.println(jerry.length());
-    System.out.println(jerry.subSequence(0,3));
+    // System.out.println(jerry.subSequence(0,3));
+    
   }
-  */
+  
   
   private String str = "";
 
-  public ReverseCharSequence(String s){
+  public ReversedCharSequence(String s){
     char[] c = s.toCharArray();
     for (int i = c.length-1; i >= 0; i--){
       str += c[i];
