@@ -10,7 +10,6 @@ public class SuperArray{
 	for (int x = 0; x < 10; x++){
 	    runTest01(x);
 	}
-	runTest01(6);
     }
     
     public static void runTest01(int testID){
@@ -117,7 +116,7 @@ public class SuperArray{
 	    //f.printStackTrace();
 	}
   
-	if(true){
+	if(equals(s1,s2)){
 	    System.out.println("Test "+testID+",PASS");
 	}else{
 	    System.out.println("Test "+testID+",FAIL");
@@ -126,6 +125,18 @@ public class SuperArray{
   
   
     }
+    public static boolean equals(SuperArray s, ArrayList<String> a){
+    if(s.size() == a.size()){
+      for(int i = 0; i < s.size(); i++){
+        if(! s.get(i).equals( a.get(i))){
+          return false;
+        }
+      }
+      return true;
+    }
+    return false;
+  }
+
 
   //constructors
   public SuperArray(int arySize){
@@ -193,15 +204,13 @@ public class SuperArray{
   }
   public String get(int index){
     if (index < 0 || index >= size){
-      System.out.println("the index is out of range (index < 0 || index >= size())");
-      return null;
+      throw new IndexOutOfBoundsException("the index is out of range (index < 0 || index >= size())");
     }
     return data[index];
   }
   public String set(int index, String element){
     if (index < 0 || index >= size){
-      System.out.println("the index is out of range (index < 0 || index >= size())");
-      return null;
+      throw new IndexOutOfBoundsException("the index is out of range (index < 0 || index >= size())");
     }
     String cmonBruh = data[index];
     data[index]=element;
@@ -216,7 +225,7 @@ public class SuperArray{
         nray[i] = data[i];
       }
       data = nray;
-      System.out.println("DOGS");
+      //System.out.println("DOGS");
     }
     else{
       String[] nray = new String[data.length*2];
@@ -252,7 +261,7 @@ public class SuperArray{
   }
   public void add(int index, String element){
     if (index < 0 || index > size){
-      System.out.println("the index is out of range (index < 0 || index > size())");
+       throw new IndexOutOfBoundsException("the index is out of range (index < 0 || index >= size())");
     }
     else{
       while (size == data.length || index >= data.length){
@@ -280,8 +289,7 @@ public class SuperArray{
   }
   public String remove(int index){
     if (index < 0 || index >= size){
-      System.out.println("the index is out of range (index < 0 || index >= size())");
-      return null;
+       throw new IndexOutOfBoundsException("the index is out of range (index < 0 || index >= size())");
     }
     String target;
     String[] nray = new String[size];
