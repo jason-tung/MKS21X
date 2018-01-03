@@ -1,4 +1,3 @@
-
 import java.util.*;
 //i forgot how to do documentation rofl
 public class SuperArray{
