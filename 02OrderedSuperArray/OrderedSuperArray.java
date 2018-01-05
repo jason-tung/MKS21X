@@ -16,8 +16,7 @@ public class OrderedSuperArray extends SuperArray{
 	for (int x = 0; x < 9; x ++){
 	    runTest02(x);
 	}
-	runTest02(3);
-	
+
     }
 
     
@@ -61,11 +60,10 @@ public static void runTest02(int testID){
       for(int i = 0; i < 10; i ++){
         String v = ""+(int)(Math.random()*1000);
         int in = (int)(Math.random()*s2.size());
+	
         s1.add(in,v);
         s2.add(in,v);
       }
-      System.out.println(s1);
-      System.out.println(s2);
       
     }
     
@@ -113,7 +111,7 @@ public static void runTest02(int testID){
   if(equals(s1,s2)){
     System.out.println("Test "+testID+",PASS");
   }else{
-          System.out.println("Test "+testID+",FAIL!");// "+s1+"!="+s2);
+      System.out.println("Test "+testID+",FAIL!");// "+s1+"!="+s2);
       System.out.println(s1);
       System.out.println(s2);
 
@@ -221,7 +219,7 @@ public static boolean equals(OrderedSuperArray s, ArrayList<String> a){
   }
   ***/
   public void add(int index, String value){
-    throw new UnsupportedOperationException("do not use an index param");
+      add(value);
   }
   public boolean add(String value){
     if (size()==0) super.add(value);
@@ -231,5 +229,10 @@ public static boolean equals(OrderedSuperArray s, ArrayList<String> a){
 
     return true;
   }
+    
+    public String set(int index, String element){
+	throw new UnsupportedOperationException();
+    }
 
 }
+
