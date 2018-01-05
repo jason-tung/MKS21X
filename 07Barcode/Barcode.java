@@ -3,6 +3,10 @@ import java.util.*;
 public class Barcode implements Comparable<Barcode>{
   public String zip;
 
+    public boolean equals(Barcode other){
+	return getZip().equals(other.getZip());
+    }
+
   public Barcode(String zip){
     if (zip.length()!=5){
       throw new IllegalArgumentException("zip is not correct len || zip has non digit");
@@ -109,10 +113,26 @@ public class Barcode implements Comparable<Barcode>{
 
 
 
+  public static void main(String[]args){
+    Barcode a = new Barcode("11245");
+    Barcode b = new Barcode("38760");
+    Barcode c = new Barcode("11245");
+    Barcode d = new Barcode("00294");
 
-
-
-
+    System.out.println(a.getZip());//11245
+    System.out.println(d.getZip());//00234
+    System.out.println(a.getCode());// |:::||:::||::|:|:|::|:|:|:::||:|
+    System.out.println(a.toString());// |:::||:::||::|:|:|::|:|:|:::||:| (11245)
+    System.out.println(b);// |::||:|::|:|:::|:||::||::::|::|| (38760)
+    System.out.println(c);// |:::||:::||::|:|:|::|:|:|:::||:| (11245)
+    System.out.println(d);// |||:::||:::::|:||:|:::|::|:|:|:| (00294)
+    System.out.println(a.compareTo(b));// negative
+    System.out.println(a.compareTo(c));// 0
+    System.out.println(a.compareTo(d));// positive
+    System.out.println(a.equals(b));// false
+    System.out.println(a.equals(c));// true
+    System.out.println(a.equals(d));// false
+  }
 
 
 
