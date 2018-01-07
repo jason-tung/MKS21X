@@ -20,7 +20,7 @@ public class Barcode implements Comparable<Barcode>{
   }
 
   public String toString(){
-    return getCode() + " ("+zip+")";
+    return getCode() + " (" + zip + ")";
   }
 
   public int compareTo(Barcode other){
