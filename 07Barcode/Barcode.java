@@ -114,6 +114,16 @@ public class Barcode implements Comparable<Barcode>{
 
 
   public static void main(String[]args){
+
+        if(Barcode.toZip(Barcode.toCode("14322")).equals("14322")  ){
+          System.out.println("Test "+ 1 +",PASS");
+	  //   System.exit(0);
+        }
+        if(Barcode.toZip(Barcode.toCode("94322")).equals("94322") ) {
+          System.out.println("Test "+ 1 +",PASS");
+	  //    System.exit(0);
+        }
+      
     Barcode a = new Barcode("11245");
     Barcode b = new Barcode("38760");
     Barcode c = new Barcode("11245");
