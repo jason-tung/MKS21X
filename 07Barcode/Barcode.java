@@ -127,7 +127,7 @@ public class Barcode implements Comparable<Barcode>{
     Barcode a = new Barcode("11245");
     Barcode b = new Barcode("38760");
     Barcode c = new Barcode("11245");
-    Barcode d = new Barcode("00294");
+    Barcode d = new Barcode("00234");
 
     System.out.println(a.getZip());//11245
     System.out.println(d.getZip());//00234
